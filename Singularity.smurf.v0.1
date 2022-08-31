@@ -8,6 +8,8 @@ IncludeCmd: yes
 
 %environment
 export LC_ALL=C
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/bin/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/sys/os/glnxa64:
+
 
 %post
   apt-get update
@@ -29,3 +31,4 @@ export LC_ALL=C
   unzip MCR_R2014a_glnxa64_installer.zip
 
   ./install -mode silent -agreeToLicense yes
+  ls /usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/runtime/glnxa64
