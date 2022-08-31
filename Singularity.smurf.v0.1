@@ -10,7 +10,7 @@ IncludeCmd: yes
 export LC_ALL=C
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/bin/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/sys/os/glnxa64:
 export XAPPLRESDIR=/usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/X11/app-defaults
-
+export PATH=${PATH}:/opt/software/SMURF/StandaloneVersion
 
 %post
   apt-get update
@@ -33,3 +33,7 @@ export XAPPLRESDIR=/usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/X11/app-default
 
   ./install -mode silent -agreeToLicense yes
   ls /usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/runtime/glnxa64
+
+  cd /opt/software
+  git clone https://github.com/NoamShental/SMURF.git
+  
