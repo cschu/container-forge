@@ -12,6 +12,8 @@ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/MATLAB/MATLAB_Compiler_Runt
 export XAPPLRESDIR=/usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/X11/app-defaults
 export PATH=${PATH}:/opt/software/SMURF/StandaloneVersion
 
+export PATH=$PATH:/opt/software/miniconda3/bin
+
 %post
   apt-get update
 
@@ -40,6 +42,9 @@ export PATH=${PATH}:/opt/software/SMURF/StandaloneVersion
   pip3 install git+https://github.com/bokulich-lab/RESCRIPt.git
   pip3 install git+https://github.com/jwdebelius/q2-sidle
   # Finally, update your qiime libraries.
+
+
+  export PATH=$PATH:/opt/software/miniconda3/bin
 
   qiime dev refresh-cache
 
