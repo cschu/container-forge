@@ -9,11 +9,8 @@ IncludeCmd: yes
 %environment
 export LC_ALL=C
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/bin/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/sys/os/glnxa64:
-export XAPPLRESDIR=/usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/X11/app-defaults
-export PATH=${PATH}:/opt/software/SMURF/StandaloneVersion
 
-export PATH=$PATH:/opt/software/miniconda3/bin
-# conda activate qiime2-2022.8
+export PATH=/opt/software/miniconda3/bin:$PATH
 
 %post
   apt-get update
@@ -36,7 +33,7 @@ export PATH=$PATH:/opt/software/miniconda3/bin
   bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/software/miniconda3
   rm -f Miniconda3-latest-Linux-x86_64.sh
 
-  export PATH=$PATH:/opt/software/miniconda3/bin
+  export PATH=/opt/software/miniconda3/bin:$PATH
   wget https://data.qiime2.org/distro/core/qiime2-2022.8-py38-linux-conda.yml
   # conda env create -n qiime2-2022.8 --file qiime2-2022.8-py38-linux-conda.yml
   conda env update -n base --file qiime2-2022.8-py38-linux-conda.yml
