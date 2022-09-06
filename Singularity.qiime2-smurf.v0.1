@@ -13,6 +13,7 @@ export XAPPLRESDIR=/usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/X11/app-default
 export PATH=${PATH}:/opt/software/SMURF/StandaloneVersion
 
 export PATH=$PATH:/opt/software/miniconda3/bin
+conda activate qiime2-2022.8
 
 %post
   apt-get update
@@ -29,14 +30,21 @@ export PATH=$PATH:/opt/software/miniconda3/bin
   apt-get install -y wget python3-pip git dirmngr gnupg ca-certificates build-essential libssl-dev libcurl4-gnutls-dev libxml2-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev unzip
 
 
+  mkdir -p /opt/software/
+
   wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
   bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/software/miniconda3
   rm -f Miniconda3-latest-Linux-x86_64.sh
 
-  mkdir -p /opt/software/
+  export PATH=$PATH:/opt/software/miniconda3/bin
+  wget https://data.qiime2.org/distro/core/qiime2-2022.8-py38-linux-conda.yml
+  conda env create -n qiime2-2022.8 --file qiime2-2022.8-py38-linux-conda.yml
+  rm qiime2-2022.8-py38-linux-conda.yml
 
-  /opt/software/miniconda3/bin/conda install dask
-  /opt/software/miniconda3/bin/conda install -c conda-forge -c bioconda -c qiime2 -c defaults xmltodict
+  conda activate qiime2-2022.8
+
+  conda install dask
+  conda install -c conda-forge -c bioconda -c qiime2 -c defaults xmltodict
   # Next, you will need the RESCRIPt and sidle plugins.
 
   pip3 install git+https://github.com/bokulich-lab/RESCRIPt.git
@@ -44,7 +52,6 @@ export PATH=$PATH:/opt/software/miniconda3/bin
   # Finally, update your qiime libraries.
 
 
-  export PATH=$PATH:/opt/software/miniconda3/bin
 
-  # qiime dev refresh-cache
+  qiime dev refresh-cache
 
