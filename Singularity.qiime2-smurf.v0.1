@@ -13,7 +13,7 @@ export XAPPLRESDIR=/usr/local/MATLAB/MATLAB_Compiler_Runtime/v83/X11/app-default
 export PATH=${PATH}:/opt/software/SMURF/StandaloneVersion
 
 export PATH=$PATH:/opt/software/miniconda3/bin
-conda activate qiime2-2022.8
+# conda activate qiime2-2022.8
 
 %post
   apt-get update
@@ -38,13 +38,14 @@ conda activate qiime2-2022.8
 
   export PATH=$PATH:/opt/software/miniconda3/bin
   wget https://data.qiime2.org/distro/core/qiime2-2022.8-py38-linux-conda.yml
-  conda env create -n qiime2-2022.8 --file qiime2-2022.8-py38-linux-conda.yml
+  # conda env create -n qiime2-2022.8 --file qiime2-2022.8-py38-linux-conda.yml
+  conda env update -n base --file qiime2-2022.8-py38-linux-conda.yml
   rm qiime2-2022.8-py38-linux-conda.yml
 
-  conda init bash
-  source /root/.bashrc
+  # conda init bash
+  # source /root/.bashrc
 
-  conda activate qiime2-2022.8
+  # conda activate qiime2-2022.8
 
   conda install dask
   conda install -c conda-forge -c bioconda -c qiime2 -c defaults xmltodict
