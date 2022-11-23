@@ -28,16 +28,16 @@ export PATH=$PATH:/opt/software/miniconda3/bin:/opt/software/PhaGCN
 
   apt-get install -y wget python3-pip git dirmngr gnupg ca-certificates build-essential libssl-dev libcurl4-gnutls-dev libxml2-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
 
-  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-  add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
+  # apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+  # add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
 
-  apt-get install -y r-base r-base-dev
+  # apt-get install -y r-base r-base-dev
   
-  R --version
+  # R --version
   python3 --version
     
   # installing packages from cran
-  R --slave -e 'install.packages(c("devtools", "tidyverse", "optparse", "stringr", "progress"), repos="https://cran.rstudio.com/", dependencies=TRUE)'
+  # R --slave -e 'install.packages(c("devtools", "tidyverse", "optparse", "stringr", "progress"), repos="https://cran.rstudio.com/", dependencies=TRUE)'
 
   # installing profilers
   mkdir -p /opt/software
