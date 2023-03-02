@@ -25,9 +25,18 @@ export PATH=$PATH:/opt/software/miniconda3/bin:/opt/software/fetchMGs:/opt/softw
   apt-get install -y wget python3-pip git dirmngr gnupg ca-certificates build-essential libssl-dev libcurl4-gnutls-dev libxml2-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
 
   
-  # MAPseq installation
+
+
+
+  
   mkdir -p /opt/software && cd /opt/software
 
+  git clone https://github.com/cschu/reCOGnise.git && \
+  cd reCOGnise && \
+  pip install .
+
+  # MAPseq installation
+  cd /opt/software && \
   wget -q https://github.com/jfmrod/MAPseq/releases/download/v1.2.6/mapseq-1.2.6-linux.tar.gz && \
   tar xzf mapseq-1.2.6-linux.tar.gz && \
   rm mapseq-1.2.6-linux.tar.gz && \
