@@ -8,7 +8,7 @@ IncludeCmd: yes
 
 %environment
 export LC_ALL=C
-export PATH=$PATH:/opt/software/miniconda3/bin:/opt/software/fetchMGS:/opt/software/fetchMGS/bin
+export PATH=$PATH:/opt/software/miniconda3/bin:/opt/software/fetchMGs:/opt/software/fetchMGs/bin
 
 %post
   apt-get update
@@ -37,7 +37,7 @@ export PATH=$PATH:/opt/software/miniconda3/bin:/opt/software/fetchMGS:/opt/softw
 
   cd /opt/software && \
   git clone https://github.com/motu-tool/fetchMGs.git && \
-  ln -s /opt/software/fetchMGS/fetchMGS.pl /usr/bin/fetchMG.pl
+  # ln -s /opt/software/fetchMGS/fetchMGs.pl /usr/bin/fetchMG.pl
   # # all the conda packages won't work together.. ><;
   # wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
   # bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/software/miniconda3
