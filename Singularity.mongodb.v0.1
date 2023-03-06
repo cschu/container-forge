@@ -8,7 +8,7 @@ IncludeCmd: yes
 
 %environment
 export LC_ALL=C
-export PATH=$PATH:/opt/software/miniconda3/bin
+¢ export PATH=$PATH:/opt/software/miniconda3/bin
 
 %post
   apt-get update
@@ -22,10 +22,17 @@ export PATH=$PATH:/opt/software/miniconda3/bin
   apt-get install -y tzdata
   dpkg-reconfigure --frontend noninteractive tzdata
 
-  apt-get install -y wget python3-pip git
+  apt-get install -y wget python3-pip git gnupg
   # # all the conda packages won't work together.. ><;
-  wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
-  bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/software/miniconda3
-  rm -f Miniconda3-latest-Linux-x86_64.sh
+  # wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
+  # bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/software/miniconda3
+  # rm -f Miniconda3-latest-Linux-x86_64.sh
 
-  /opt/software/miniconda3/bin/conda install -y -c anaconda mongodb
+  # /opt/software/miniconda3/bin/conda install -y -c anaconda mongodb
+  wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+  
+  echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+  sudo apt-get update
+  sudo apt-get install -y mongocli
+
+  
