@@ -29,17 +29,17 @@ export PATH=$PATH:/opt/software/miniconda3/bin:/opt/software/fetchMGs:/opt/softw
   wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
   bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/software/miniconda3
   rm -f Miniconda3-latest-Linux-x86_64.sh
-  /opt/software/miniconda3/bin/conda install -y -c conda-forge -c bioconda bowtie2 diamond metaphlan=4.0
+  /opt/software/miniconda3/bin/conda install -y -c conda-forge -c bioconda bowtie2 diamond metaphlan
 
-  git clone https://github.com/biobakery/humann.git
-  cd humann
+  # git clone https://github.com/biobakery/humann.git
+  # cd humann
 
 
-  sed -i "363 s/3/4/" config.py
+  # sed -i "363 s/3/4/" config.py
   
-  python setup.py install
+  # python setup.py install
 
-  # pip install humann
+  pip install humann
 
   # # install what you can via conda
   # # /opt/software/miniconda3/bin/conda install -y -c conda-forge -c bioconda hmmer 'samtools>=1.13' bwa kraken2 'gatk4==4.1.6.0-0' fastqc multiqc bbmap seqtk
