@@ -31,7 +31,7 @@ export PATH=$PATH:/opt/software/miniconda3/bin:/opt/software/fetchMGs:/opt/softw
   rm -f Miniconda3-latest-Linux-x86_64.sh
   /opt/software/miniconda3/bin/conda install -y -c conda-forge -c bioconda bowtie2 diamond metaphlan
 
-  git clone https://github.com/biobakery/humann.git && cd humann && sed -i "363 s/3/4/; 152i 'print(version_found); 100 s/message/line/" humann/config.py && /opt/software/miniconda3/bin/python setup.py install
+  git clone https://github.com/biobakery/humann.git && cd humann && sed -i "363 s/3/4/; 152i 'print(version_found)'; 100 s/message/line/" humann/config.py && /opt/software/miniconda3/bin/python setup.py install
 
   # pip install humann
 
