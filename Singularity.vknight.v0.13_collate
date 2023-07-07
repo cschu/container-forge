@@ -26,7 +26,10 @@ export LC_ALL=C
   add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/'
 
   apt-get install -y r-base r-base-dev
-  
+
+  # installing packages from cran
+  R --slave -e 'install.packages(c("devtools", "tidyverse", "optparse", "stringr", "progress"), repos="https://cran.rstudio.com/", dependencies=TRUE)'
+
   R --version
   python3 --version
   
