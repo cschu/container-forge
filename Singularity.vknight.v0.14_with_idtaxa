@@ -4,7 +4,7 @@ IncludeCmd: yes
 
 %labels
   MAINTAINER cschu (cschu1981@gmail.com)
-  VERSION v.0.13
+  VERSION v.0.14
 
 %environment
 #R_VERSION=4.1
@@ -30,7 +30,7 @@ export LC_ALL=C
   # installing packages from cran
   R --slave -e 'install.packages(c("devtools", "dplyr", "tidyverse", "optparse", "stringr", "progress", "arrow", "R.utils", "BiocManager"), repos="https://cran.rstudio.com/", dependencies=TRUE)'
 
-  R --slave -e 'BiocManager::install(version = "3.17")'
+  R --slave -e 'BiocManager::install(version = "3.14")'
   R --slave -e 'BiocManager::install(c("DECIPHER"))'
 
   R --version
