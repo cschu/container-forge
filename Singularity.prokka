@@ -22,8 +22,11 @@ export PATH=$PATH:/opt/software/prokka/bin:/opt/software/miniconda3/bin
   apt-get install -y tzdata
   dpkg-reconfigure --frontend noninteractive tzdata
 
-  apt-get install -y wget python3-pip git dirmngr gnupg ca-certificates build-essential libssl-dev libcurl4-gnutls-dev openjdk-11-jre
+  apt-get install -y wget python3-pip git dirmngr gnupg ca-certificates build-essential libssl-dev libcurl4-gnutls-dev openjdk-11-jre libxml-simple-perl libtime-piece-perl libdigest-perl-md5-perl cpanminus libmodule-build-perl
   
+  cpanm Bio::Perl
+
+
   wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
   bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/software/miniconda3 && \
   rm -f Miniconda3-latest-Linux-x86_64.sh && \
