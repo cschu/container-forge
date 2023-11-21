@@ -8,7 +8,7 @@ IncludeCmd: yes
 
 %environment
 export LC_ALL=C
-export PATH=$PATH:/opt/software/prokka/bin:/opt/software/miniconda3/bin
+export PATH=$PATH:/opt/software/prokka/bin:/opt/software/prokka/binaries/linux:/opt/software/miniconda3/bin
 
 %post
   apt-get update
@@ -34,6 +34,8 @@ export PATH=$PATH:/opt/software/prokka/bin:/opt/software/miniconda3/bin
 
   cd /opt/software && \
   git clone https://github.com/tseemann/prokka.git /opt/software/prokka && \
-  /opt/software/prokka/bin/prokka --setupdb
+  /opt/software/prokka/bin/prokka --setupdb && \
+  chmod 755 /opt/software/prokka/bin/* && \
+  chmod 755 /opt/software/prokka/binaries/linux/*
 
 
