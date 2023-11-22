@@ -26,7 +26,7 @@ export PATH=/opt/software/miniconda3/bin:$PATH
 
   apt-get install -y build-essential wget python3-pip git 
   
-  pip install carveme
+  /opt/software/miniconda3/bin/pip install carveme
 
   wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
   bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/software/miniconda3 && \
