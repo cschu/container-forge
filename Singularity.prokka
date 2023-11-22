@@ -8,8 +8,9 @@ IncludeCmd: yes
 
 %environment
 export LC_ALL=C
-export PATH=$PATH:/opt/software/prokka/bin:/opt/software/prokka/binaries/linux:/opt/software/miniconda3/bin
-export PATH=$PATH:/opt/software/prokka/bin:/opt/software/miniconda3/bin
+# export PATH=$PATH:/opt/software/prokka/bin:/opt/software/prokka/binaries/linux:/opt/software/miniconda3/bin
+#export PATH=$PATH:/opt/software/prokka/bin:/opt/software/miniconda3/bin
+export PATH=/opt/software/miniconda3/bin:$PATH
 
 %post
   apt-get update
