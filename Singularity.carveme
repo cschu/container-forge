@@ -36,3 +36,5 @@ export PATH=/opt/software/miniconda3/bin:$PATH
 
   ls /opt/software/miniconda3/bin/ 
   /opt/software/miniconda3/bin/pip install carveme
+
+  ln -s libscip.so.8.1.0.0 /opt/software/miniconda3/lib/libscip.so.8.0
