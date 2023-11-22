@@ -42,5 +42,6 @@ export PATH=/opt/software/miniconda3/bin:$PATH
 
   # echo ">protein1\nWHYYYYYYYYY" > dummy.faa
   # carve --solver scip dummy.faa
+  export PATH=/opt/software/miniconda3/bin:$PATH
   diamond makedb --in /opt/software/miniconda3/lib/python3.11/site-packages/carveme/data/generated/bigg_proteins.faa -d /opt/software/miniconda3/lib/python3.11/site-packages/carveme/data/generated/bigg_proteins
 
