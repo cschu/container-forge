@@ -24,7 +24,7 @@ export PATH=$PATH:/opt/software/prokka/bin:/opt/software/miniconda3/bin
   dpkg-reconfigure --frontend noninteractive tzdata
 
   # apt-get install -y wget python3-pip git dirmngr gnupg ca-certificates build-essential libssl-dev libcurl4-gnutls-dev openjdk-11-jre libxml-simple-perl libtime-piece-perl libdigest-perl-md5-perl cpanminus libmodule-build-perl parallel
-  apt-get install build-essential wget python3-pip git 
+  apt-get install -y build-essential wget python3-pip git 
   
   # cpanm --force Bio::Perl
 
