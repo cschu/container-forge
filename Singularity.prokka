@@ -34,10 +34,10 @@ export PATH=$PATH:/opt/software/prokka/bin:/opt/software/miniconda3/bin
   rm -f Miniconda3-latest-Linux-x86_64.sh && \
   /opt/software/miniconda3/bin/conda install -y -c conda-forge -c bioconda barrnap prokka 
 
-  cd /opt/software && \
-  git clone https://github.com/tseemann/prokka.git /opt/software/prokka && \
-  /opt/software/prokka/bin/prokka --setupdb && \
-  chmod 755 /opt/software/prokka/bin/* && \
-  chmod 755 /opt/software/prokka/binaries/linux/*
+  # cd /opt/software && \
+  # git clone https://github.com/tseemann/prokka.git /opt/software/prokka && \
+  # /opt/software/prokka/bin/prokka --setupdb && \
+  # chmod 755 /opt/software/prokka/bin/* && \
+  # chmod 755 /opt/software/prokka/binaries/linux/*
 
 
